@@ -24,6 +24,8 @@ Para el diseño de la herramienta se consideraron los siguientes parametros de d
 
 Teniendo en cuenta esto, se tomaron las respectivas medidas del marcador y teniendo en cuenta la hoja de datos del robot se procedió a hacer un boceto de la herramienta como se ve en la siguiente imagen y por facilidad para alcanzar la superficie y evitar tener inconvenientes con la concordancia de los sistemas coordenados se diseñó la herramienta a 45°
 
+![1710210839228](image/README/1710210839228.png)
+
 Una vez teniendo esto, se tuvo en cuenta que la herramienta se pretendía hacer por medio de manufactura aditiva con impresión 3D por lo cual se tenia que tener en cuenta ciertas tolerancias debido a la expansión y contracción termica que podria sufrir el PLA por este método de manufactura.
 
 ![1710207357054](image/README/1710207357054.png)
