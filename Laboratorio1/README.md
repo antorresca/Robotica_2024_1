@@ -21,6 +21,7 @@ Para el diseño de la herramienta se consideraron los siguientes parametros de d
 * Fuerzas ejercidadas por el robot
 * Ángulo de la superficie
 * Tolerancias
+* Otros
 
 Teniendo en cuenta esto, se tomaron las respectivas medidas del marcador y teniendo en cuenta la hoja de datos del robot se procedió a hacer un boceto de la herramienta como se ve en la siguiente imagen y por facilidad para alcanzar la superficie y evitar tener inconvenientes con la concordancia de los sistemas coordenados se diseñó la herramienta a 45°
 
