@@ -26,11 +26,13 @@ Teniendo en cuenta esto, se tomaron las respectivas medidas del marcador y tenie
 
 Una vez teniendo esto, se tuvo en cuenta que la herramienta se pretendía hacer por medio de manufactura aditiva con impresión 3D por lo cual se tenia que tener en cuenta ciertas tolerancias debido a la expansión y contracción termica que podria sufrir el PLA por este método de manufactura.
 
+![1710207357054](image/README/1710207357054.png)
+
 Una vez teniendo en cuenta estos parametros se diseñó la herramienta que se ve en los siguientes planos.
 
-![1710207159951](image/README/1710207159951.png)
+![1710209020377](image/README/1710209020377.png)
 
-![1710207167181](image/README/1710207167181.png)
+![1710209032748](image/README/1710209032748.png)
 
 Al realizar la impresión 3D se obtuvo la siguiente herramienta.
 
