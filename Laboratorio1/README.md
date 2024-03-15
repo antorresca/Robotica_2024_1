@@ -42,3 +42,5 @@ Al realizar la impresión 3D se obtuvo la siguiente herramienta.
 ## Código en RAPID
 
 ## Video Demostrativo
+
+El link donde se encuentra el video es el siguiente:
