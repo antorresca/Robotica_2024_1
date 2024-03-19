@@ -1,8 +1,9 @@
 # Laboratorio 1 - Robótica Industrial - "Trayectorias, Entradas y Salidas Digitales"
 
 ***Participantes***
-__Andres Camilo Torres Cajamarca__
-__Brian Enrique Muñoz Garcia__
+
+* Andres Camilo Torres Cajamarca
+* Brian Enrique Muñoz Garcia
 
 ## Descripción Solución Planteada
 
