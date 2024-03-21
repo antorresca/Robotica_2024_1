@@ -17,7 +17,7 @@ Durante el desarrollo de la práctica se pudo evidenciar que en ciertos casos al
 
 ## Diagrama de Flujo de acciones del robot
 
-![1710725909011](image/README/1710725909011.png)
+![1711047013858](image/README/1711047013858.png)
 
 ## Plano de planta de la ubicación de cada uno de los elementos
 
