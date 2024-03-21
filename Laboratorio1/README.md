@@ -14,7 +14,7 @@ Para generar las trayectorias, se generaron cada uno de los puntos correspondien
 
 ## Diagrama de Flujo de acciones del robot
 
-![1710725909011](image/README/1710725909011.png)
+![1711047013858](image/README/1711047013858.png)
 
 ## Plano de planta de la ubicación de cada uno de los elementos
 
@@ -428,7 +428,7 @@ MODULE Module1
                 Casa;
                 Mantenimiento;
             ENDIF
-        ENDWHILE    
+        ENDWHILE  
     ENDPROC
     PROC Escribir()
         Path_10;
