@@ -70,4 +70,4 @@ El link donde se encuentra el video de la simulación es el siguiente:
 
 El link donde se encuentra el video demostrativo del funcionamiento es el siguiente:
 
-[https://drive.google.com/file/d/1xLDvLqA7we9p7A_fknllIuA77fwrY0Xp/view?usp=drive_link]([https://drive.google.com/file/d/1-fkUrs10K-_VG1Xfjn2DbphrHv41BWaV/view?usp=sharing)
+[https://drive.google.com/file/d/1xLDvLqA7we9p7A_fknllIuA77fwrY0Xp/view?usp=sharing](https://drive.google.com/file/d/1xLDvLqA7we9p7A_fknllIuA77fwrY0Xp/view?usp=sharing)
