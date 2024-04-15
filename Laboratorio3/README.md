@@ -1,14 +1,20 @@
 # Laboratorio 3 - Robótica de Desarrollo, Intro a ROS
 
 ***Participantes***
-__Andres Camilo Torres Cajamarca__
-__Brian Enrique Muñoz Garcia__
 
+* Andres Camilo Torres Cajamarca
+* Brian Enrique Muñoz Garcia
 ## Metodología
 
 ### Matlab:
 
+Para esta sección se realizó la instalación de *ROS* y de *MATLAB* con las toolbox necesarias (*ROS Toolbox* y *ROBOTIC Toolbox*).
+
+En primer lugar se empleó siguió el procedimiento descrito en la guia de laboratorio con la cual se abrieron las terminales para el uso de *ROS*, la pantalla de la simulación de *TurtleSim* y el *MATLAB.*
+
 ![1712949028975](images/README/1712949028975.png)
+
+Empleando el siguiente script (Descrito en la guía de trabajo):
 
 ```
 rosinit; %Conexion con nodo maestro
@@ -20,7 +26,11 @@ pause(1)
 rosshutdown;
 ```
 
+Se logró conectar al nodo maestro de ROS y mediante un publicador al tópico *CMD_VEL* y un mensaje de tipo *Twist* , al cual se le puede asignar una velocidad en *X y Y* tanto lineal como angular, asignando sólo el valor de *1* en el parametro X lineal, la tortuga se movió en sentido *X* positivo. El resultado se puede ver en la siguiente imagen:
+
 ![1712948982816](images/README/1712948982816.png)
+
+Como siguiente tarea se encontraba el buscar como mediente un script de *MATLAB* se podía averiguar la pose de la tortuga, para ello se creó el siguiente script:
 
 ```
 % Iniciar el nodo de ROS en MATLAB
@@ -47,7 +57,11 @@ disp(latest_message);
 rosshutdown;
 ```
 
+Con este script se permite escuchar el tópico *pose* de la tortuga obteniendo un mensaje de tipo *pose* que lo muesta en la consola de *MATLAB*, como se puede ver en la siguiente imagen
+
 ![1712949130284](images/README/1712949130284.png)
+
+Por último se pedia crear un script capaz de, mediante los paramentros de una Pose, hacer mover la tortuga a dicha posición, para ello se empleó el siguiente script:
 
 ```
 % Iniciar ROS en MATLAB
@@ -71,8 +85,9 @@ teleportResponse = call(teleportClient, teleportRequest);
 rosshutdown;
 ```
 
-![1712949143191](images/README/1712949143191.png)
+Con este script se crea una solicitud de servicio de tipo *Teleport_Absolute* que permite enviar a la tortuga a una posición deseada enviandole 3 parametros (*X*, *Y* y *Theta*) en coordenadas absolutas, es decir que son con respecto a el origen del plano y no con respecto a la posicion actual de la tortuga; el resultado se muestra en la siguiente imagen:
 
+![1712949143191](images/README/1712949143191.png)
 
 ### Python:
 
@@ -229,8 +244,10 @@ Por último, inicializamos un nodo al que nombramos `my_teleop_key`, utilizamos 
 
 ## Resultados
 
-Para el desarrollo de la práctica, primero se realizó el código y se probó en el simulador EPSON RC+ 7.0
+El link donde se encuentra el video de la simulación de MatLab es:
 
-El link donde se encuentra el video de la simulación es el siguiente:
+[https://drive.google.com/file/d/1QuIyPr4Sos44YuqAVYN-qbetXw8ObIxZ/view?usp=sharing](https://drive.google.com/file/d/1QuIyPr4Sos44YuqAVYN-qbetXw8ObIxZ/view?usp=sharing)
 
 ## Conclusiones
+
+El presente laboratorio permite hacer una introducción a *ROS* por medio del uso de *tourtlesim* empleando diversos temas esenciales como lo son suscribtores, publicadores, topicos, mensajes, servicios, etc. todo esto con la finalidad de saber como pueden ser emleados para diversas tareas y objetivos de futuros laboratorios.
