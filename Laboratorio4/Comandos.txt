@@ -1,0 +1,13 @@
+**COMANDOS PARA ROS
+
+*Terminal 1
+
+cd catkin_ws
+source devel/setup.bash
+cd src/dynamixel_one_motor
+roslaunch dynamixel_one_motor one_controller.launch
+
+*Terminal 2
+
+cd catkin_ws/src/dynamixel_one_motor/script
+python Script1.py
