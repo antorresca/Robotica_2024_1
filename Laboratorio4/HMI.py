@@ -71,6 +71,7 @@ def accion_home():
     imagen_label.config(image=imagen)
     mandar_datos(Home)
     pass
+    actualizar_valores_articulaciones0()
 
 Pose1 = '25,25,20,-20'
 valores_conv = Pose1.split(',')
@@ -82,7 +83,7 @@ def accion_pose1():
     imagen_label.config(image=imagen1)
     mandar_datos(Pose1real)
 
-    actualizar_valores_articulaciones()
+    actualizar_valores_articulaciones1()
 
 Pose2 = '-35,35,-30,30'
 valores_conv = Pose2.split(',')
@@ -92,7 +93,7 @@ Pose2real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv
 def accion_pose2():
     imagen_label.config(image=imagen2)
     mandar_datos(Pose2real)
-    actualizar_valores_articulaciones()
+    actualizar_valores_articulaciones2()
     
 Pose3 = '85,-20,30,25'
 valores_conv = Pose3.split(',')
@@ -101,7 +102,7 @@ Pose3real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv
 def accion_pose3():
     imagen_label.config(image=imagen3)
     mandar_datos(Pose3real)
-    actualizar_valores_articulaciones()
+    actualizar_valores_articulaciones3()
 
 Pose4 = '80,-35,30,-45'
 valores_conv = Pose4.split(',')
@@ -110,7 +111,7 @@ Pose4real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv
 def accion_pose4():
     imagen_label.config(image=imagen4)
     mandar_datos(Pose4real)
-    actualizar_valores_articulaciones()
+    actualizar_valores_articulaciones4()
 
 # Crear y colocar los botones
 boton_home = tk.Button(frame_botones, text="Home", command=accion_home, width=14, height=6)
@@ -167,18 +168,75 @@ imagen_label.pack()
 
 
 # Función para actualizar valores de articulaciones
-def actualizar_valores_articulaciones():
+def actualizar_valores_articulaciones0():
     # Implementar la lógica para obtener los valores de las articulaciones
     # Actualizar las variables StringVar con los nuevos valores
-    valor_joint1.set("Nuevo valor Joint 1")
-    valor_joint2.set("Nuevo valor Joint 2")
-    valor_joint3.set("Nuevo valor Joint 3")
-    valor_joint4.set("Nuevo valor Joint 4")
+    valor_joint1.set(angulos_re[0])
+    valor_joint2.set(angulos_re[1])
+    valor_joint3.set(angulos_re[2])
+    valor_joint4.set(angulos_re[3])
 
     # Actualizar las etiquetas con los valores de las variables
     etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
     etiqueta_joint2.config(text="JOINT2: " + valor_joint2.get())
     etiqueta_joint3.config(text="JOINT3: " + valor_joint3.get())
     etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
+
+def actualizar_valores_articulaciones1():
+    # Implementar la lógica para obtener los valores de las articulaciones
+    # Actualizar las variables StringVar con los nuevos valores
+    valor_joint1.set(Pose1real[0])
+    valor_joint2.set(Pose1real[1])
+    valor_joint3.set(Pose1real[2])
+    valor_joint4.set(Pose1real[3])
+
+    # Actualizar las etiquetas con los valores de las variables
+    etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
+    etiqueta_joint2.config(text="JOINT2: " + valor_joint2.get())
+    etiqueta_joint3.config(text="JOINT3: " + valor_joint3.get())
+    etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
+
+def actualizar_valores_articulaciones2():
+    # Implementar la lógica para obtener los valores de las articulaciones
+    # Actualizar las variables StringVar con los nuevos valores
+    valor_joint1.set(Pose2real[0])
+    valor_joint2.set(Pose2real[1])
+    valor_joint3.set(Pose2real[2])
+    valor_joint4.set(Pose2real[3])
+
+    # Actualizar las etiquetas con los valores de las variables
+    etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
+    etiqueta_joint2.config(text="JOINT2: " + valor_joint2.get())
+    etiqueta_joint3.config(text="JOINT3: " + valor_joint3.get())
+    etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
+
+def actualizar_valores_articulaciones3():
+    # Implementar la lógica para obtener los valores de las articulaciones
+    # Actualizar las variables StringVar con los nuevos valores
+    valor_joint1.set(Pose3real[0])
+    valor_joint2.set(Pose3real[1])
+    valor_joint3.set(Pose3real[2])
+    valor_joint4.set(Pose3real[3])
+
+    # Actualizar las etiquetas con los valores de las variables
+    etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
+    etiqueta_joint2.config(text="JOINT2: " + valor_joint2.get())
+    etiqueta_joint3.config(text="JOINT3: " + valor_joint3.get())
+    etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
+
+def actualizar_valores_articulaciones4():
+    # Implementar la lógica para obtener los valores de las articulaciones
+    # Actualizar las variables StringVar con los nuevos valores
+    valor_joint1.set(Pose4real[0])
+    valor_joint2.set(Pose4real[1])
+    valor_joint3.set(Pose4real[2])
+    valor_joint4.set(Pose4real[3])
+
+    # Actualizar las etiquetas con los valores de las variables
+    etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
+    etiqueta_joint2.config(text="JOINT2: " + valor_joint2.get())
+    etiqueta_joint3.config(text="JOINT3: " + valor_joint3.get())
+    etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
+
 # Iniciar el bucle principal de la interfaz
 ventana.mainloop() 
