@@ -72,7 +72,7 @@ def accion_home():
     mandar_datos(Home)
     pass
 
-Pose1 = [25,25,20,-20]
+Pose1 = '25,25,20,-20'
 valores_conv = Pose1.split(',')
 valores_conv = [int(valores_conv[i]) for i in range(len(valores_conv))]
 Pose1real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv))] 
@@ -84,7 +84,7 @@ def accion_pose1():
 
     actualizar_valores_articulaciones()
 
-Pose2 = [-35,35,-30,30]
+Pose2 = '-35,35,-30,30'
 valores_conv = Pose2.split(',')
 valores_conv = [int(valores_conv[i]) for i in range(len(valores_conv))]
 Pose2real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv))] 
@@ -94,7 +94,7 @@ def accion_pose2():
     mandar_datos(Pose2real)
     actualizar_valores_articulaciones()
     
-Pose3 = [85,-20,30,25]
+Pose3 = '85,-20,30,25'
 valores_conv = Pose3.split(',')
 valores_conv = [int(valores_conv[i]) for i in range(len(valores_conv))]
 Pose3real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv))] 
@@ -103,7 +103,7 @@ def accion_pose3():
     mandar_datos(Pose3real)
     actualizar_valores_articulaciones()
 
-Pose4 = [80,-35,30,-45]
+Pose4 = '80,-35,30,-45'
 valores_conv = Pose4.split(',')
 valores_conv = [int(valores_conv[i]) for i in range(len(valores_conv))]
 Pose4real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv))] 
