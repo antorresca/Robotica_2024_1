@@ -22,7 +22,7 @@ titulo = tk.Label(frame_titulo, text="Laboratorio de robótica No. 4  Cinemáti
 titulo.pack(pady=20)
 
 # Definir el subtítulo
-subtitulo = tk.Label(frame_titulo, text="Integrantes: Andrés Torres y Brian Muñoz", font=("Arial", 12, "bold"))
+subtitulo = tk.Label(frame_titulo, text="Integrantes: Andres Torres y Brian Muñoz", font=("Arial", 12, "bold"))
 subtitulo.pack(pady=5)
 
 
@@ -51,6 +51,8 @@ def mandar_datos(lista):
     lista: Lista de 4 elementos de tipo int con formato A,B,C,D donde A,B,C y D son los angulos deseados teniendo en cuenta la posicion de Home del robot
     '''
     global angulos_re #Variable global que guarda los valores en angulos teoricos de la posicion HOME
+    global angulos_pose
+    angulos_pose = []
     for i in range(1,5,1):
         '''
         For que itera en cada uno de los motores y manda el valor en escala del motor del angulo deseado 
@@ -58,7 +60,9 @@ def mandar_datos(lista):
         jointCommand('', i, 'Goal_Position', lista[i-1], 0.5) 
         time.sleep(1)
         angulo = round(lista[i-1]/conv) #Conversion del valor del motor a angulo
-        print('Angulo Relativo: '+str(angulo-angulos_re[i-1])) #Desfase porque el home no es el 0 de cada motor
+        angulo_relativo = angulo-angulos_re[i-1]
+        angulos_pose.append(angulo_relativo)
+        print('Angulo Relativo: '+str(angulo_relativo)) #Desfase porque el home no es el 0 de cada motor
 
 global angulos_re
 Home = [2017,2070,3065,2069] #Valores de HOME hallados con Dynamixel Wizard
@@ -99,6 +103,7 @@ Pose3 = '85,-20,30,25'
 valores_conv = Pose3.split(',')
 valores_conv = [int(valores_conv[i]) for i in range(len(valores_conv))]
 Pose3real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv))] 
+
 def accion_pose3():
     imagen_label.config(image=imagen3)
     mandar_datos(Pose3real)
@@ -108,6 +113,7 @@ Pose4 = '80,-35,30,-45'
 valores_conv = Pose4.split(',')
 valores_conv = [int(valores_conv[i]) for i in range(len(valores_conv))]
 Pose4real = [round(Home[i]+valores_conv[i]*conv) for i in range(len(valores_conv))] 
+
 def accion_pose4():
     imagen_label.config(image=imagen4)
     mandar_datos(Pose4real)
@@ -128,7 +134,6 @@ boton_pose3.pack(pady=5)
 
 boton_pose4 = tk.Button(frame_botones, text="Pose 4", command=accion_pose4, width=14, height=6)
 boton_pose4.pack(pady=5)
-
 
 # **Frame 3: Valores articulares**
 frame_valores = tk.Frame(ventana)
@@ -169,12 +174,13 @@ imagen_label.pack()
 
 # Función para actualizar valores de articulaciones
 def actualizar_valores_articulaciones0():
+    global angulos_pose
     # Implementar la lógica para obtener los valores de las articulaciones
     # Actualizar las variables StringVar con los nuevos valores
-    valor_joint1.set(angulos_re[0])
-    valor_joint2.set(angulos_re[1])
-    valor_joint3.set(angulos_re[2])
-    valor_joint4.set(angulos_re[3])
+    valor_joint1.set(angulos_pose[0])
+    valor_joint2.set(angulos_pose[1])
+    valor_joint3.set(angulos_pose[2])
+    valor_joint4.set(angulos_pose[3])
 
     # Actualizar las etiquetas con los valores de las variables
     etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
@@ -183,12 +189,13 @@ def actualizar_valores_articulaciones0():
     etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
 
 def actualizar_valores_articulaciones1():
+    global angulos_pose
     # Implementar la lógica para obtener los valores de las articulaciones
     # Actualizar las variables StringVar con los nuevos valores
-    valor_joint1.set(Pose1real[0])
-    valor_joint2.set(Pose1real[1])
-    valor_joint3.set(Pose1real[2])
-    valor_joint4.set(Pose1real[3])
+    valor_joint1.set(angulos_pose[0])
+    valor_joint2.set(angulos_pose[1])
+    valor_joint3.set(angulos_pose[2])
+    valor_joint4.set(angulos_pose[3])
 
     # Actualizar las etiquetas con los valores de las variables
     etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
@@ -197,12 +204,13 @@ def actualizar_valores_articulaciones1():
     etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
 
 def actualizar_valores_articulaciones2():
+    global angulos_pose
     # Implementar la lógica para obtener los valores de las articulaciones
     # Actualizar las variables StringVar con los nuevos valores
-    valor_joint1.set(Pose2real[0])
-    valor_joint2.set(Pose2real[1])
-    valor_joint3.set(Pose2real[2])
-    valor_joint4.set(Pose2real[3])
+    valor_joint1.set(angulos_pose[0])
+    valor_joint2.set(angulos_pose[1])
+    valor_joint3.set(angulos_pose[2])
+    valor_joint4.set(angulos_pose[3])
 
     # Actualizar las etiquetas con los valores de las variables
     etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
@@ -211,12 +219,13 @@ def actualizar_valores_articulaciones2():
     etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
 
 def actualizar_valores_articulaciones3():
+    global angulos_pose
     # Implementar la lógica para obtener los valores de las articulaciones
     # Actualizar las variables StringVar con los nuevos valores
-    valor_joint1.set(Pose3real[0])
-    valor_joint2.set(Pose3real[1])
-    valor_joint3.set(Pose3real[2])
-    valor_joint4.set(Pose3real[3])
+    valor_joint1.set(angulos_pose[0])
+    valor_joint2.set(angulos_pose[1])
+    valor_joint3.set(angulos_pose[2])
+    valor_joint4.set(angulos_pose[3])
 
     # Actualizar las etiquetas con los valores de las variables
     etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())
@@ -225,12 +234,13 @@ def actualizar_valores_articulaciones3():
     etiqueta_joint4.config(text="JOINT4: " + valor_joint4.get())
 
 def actualizar_valores_articulaciones4():
+    global angulos_pose
     # Implementar la lógica para obtener los valores de las articulaciones
     # Actualizar las variables StringVar con los nuevos valores
-    valor_joint1.set(Pose4real[0])
-    valor_joint2.set(Pose4real[1])
-    valor_joint3.set(Pose4real[2])
-    valor_joint4.set(Pose4real[3])
+    valor_joint1.set(angulos_pose[0])
+    valor_joint2.set(angulos_pose[1])
+    valor_joint3.set(angulos_pose[2])
+    valor_joint4.set(angulos_pose[3])
 
     # Actualizar las etiquetas con los valores de las variables
     etiqueta_joint1.config(text="JOINT1: " + valor_joint1.get())

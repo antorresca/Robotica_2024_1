@@ -1,22 +1,27 @@
-"""
-Allows to use the service dynamixel_command 
-"""
 import rospy
 import time
 from std_msgs.msg import String
 from dynamixel_workbench_msgs.srv import DynamixelCommand
+from dynamixel_workbench_msgs.msg import DynamixelStateList  # Agregado
 
 __author__ = "F Gonzalez, S Realpe, JM Fajardo"
 __credits__ = ["Felipe Gonzalez", "Sebastian Realpe", "Jose Manuel Fajardo", "Robotis"]
 __email__ = "fegonzalezro@unal.edu.co"
 __status__ = "Test"
 
+# Callback para leer la posición del motor
+def callback(data):
+    for state in data.dynamixel_state:
+        rospy.loginfo("ID: %d, Position: %d", state.id, state.present_position)
+        # Imprimir la posición del motor
+        print(f"ID: {state.id}, Position: {state.present_position}")
+
 def jointCommand(command, id_num, addr_name, value, time):
-    #rospy.init_node('joint_node', anonymous=False)
+    # rospy.init_node('joint_node', anonymous=False)
     rospy.wait_for_service('dynamixel_workbench/dynamixel_command')
-    try:        
+    try:
         dynamixel_command = rospy.ServiceProxy('/dynamixel_workbench/dynamixel_command', DynamixelCommand)
-        result = dynamixel_command(command,id_num,addr_name,value)
+        result = dynamixel_command(command, id_num, addr_name, value)
         rospy.sleep(time)
         return result.comm_result
     except rospy.ServiceException as exc:
@@ -47,6 +52,12 @@ if __name__ == '__main__':
         conv = 11.376641207027 #Factor de conversion hallado por linealizacion
         angulos_re = [round(Home[i]/conv) for i in range(len(Home))] 
         mandar_datos(Home) #Llevar el robot a HOME para empezar rutina
+        
+        # Suscribirse al tópico para leer la posición del motor
+        rospy.init_node('dynamixel_subscriber', anonymous=True)
+        rospy.Subscriber('/dynamixel_state', DynamixelStateList, callback)
+        rospy.spin()
+
         while True:
             valores = input('Ingrese valores de angulos (Formato: A,B,C,D)') #Solicita al usuario los valores de los angulos a los que se desea llegar
             valores_conv = valores.split(',')
@@ -55,3 +66,4 @@ if __name__ == '__main__':
             mandar_datos(valores_real)
     except rospy.ROSInterruptException:
         pass
+
