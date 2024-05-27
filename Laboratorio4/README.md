@@ -126,6 +126,8 @@ ventana.mainloop()
 
 ## Resultados
 
-Vídeo del brazo alcanzando cada posición solicitada.
-Vídeo demostración de uso de la interfaz de usuario.
+Vídeo del brazo alcanzando cada posición solicitada y demostración de uso de la interfaz de usuario.
+
+[https://drive.google.com/file/d/1xkThAWf9IHRIQZQI4dn2cfCvEYGdaHWz/view?usp=sharing](https://drive.google.com/file/d/1xkThAWf9IHRIQZQI4dn2cfCvEYGdaHWz/view?usp=sharing)
+
 Gráfica digital de las poses comparándola con la fotografía del brazo real en la misma configuración.
