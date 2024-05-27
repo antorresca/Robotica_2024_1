@@ -1,34 +1,25 @@
-<<<<<<< Updated upstream
-# Laboratorio 4 - Robótica de Desarrollo, Intro a ROS
-=======
-
 # Laboratorio 4 - Cinemática Directa- Phantom X- ROS
->>>>>>> Stashed changes
 
-***Participantes***
+### ***Participantes***
 
 * Andres Camilo Torres Cajamarca
 * Brian Enrique Muñoz Garcia
 
 ## Metodología
 
-<<<<<<< Updated upstream
-### Cinemática directa
+Cinemática directa
 
 ![1716430255455](image/README/1716430255455.png)
 
 ## Resultados
 
 ## Conclusiones
-=======
-### Mediciones:
 
+### Mediciones:
 
 ### Análisis:
 
 Parámetros DH del robot Phantom X Pincher:
-
-
 
 ## ROS
 
@@ -133,10 +124,8 @@ def actualizar_valores_articulaciones():
 ventana.mainloop() 
 ```
 
-
 ## Resultados
 
 Vídeo del brazo alcanzando cada posición solicitada.
 Vídeo demostración de uso de la interfaz de usuario.
 Gráfica digital de las poses comparándola con la fotografía del brazo real en la misma configuración.
->>>>>>> Stashed changes
