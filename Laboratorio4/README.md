@@ -11,7 +11,7 @@
 
 Se tomaron las distancias minimas entre los ejes de cada motor y se realizó un primer boceto como se puede observar a continuación:
 
-![1716782886340](image/README/1716782886340.png)
+![1716932430431](image/README/1716932430431.png)
 
 ### Análisis:
 
