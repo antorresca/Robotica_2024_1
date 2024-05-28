@@ -9,9 +9,13 @@
 
 ### Mediciones:
 
+Se tomaron las distancias minimas entre los ejes de cada motor y se realizó un primer boceto como se puede observar a continuación:
+
 ![1716782886340](image/README/1716782886340.png)
 
 ### Análisis:
+
+Para realizar el analisis de cinemtaica directa se realizó otro dibujo y se hizo el procedimiento aprendido en clase
 
 ![1716784089820](image/README/1716784089820.png)
 
@@ -21,9 +25,45 @@ Parámetros DH del robot Phantom X Pincher:
 
 ### Cinemática directa
 
+Una vez teniendo los parametros DH del robot se empleó la función "DH.mlx" para encontrar la matriz de transformación desde la base hasta el TCP
+
 ![1716430255455](image/README/1716430255455.png)
 
+### SerialLink (MATLAB)
+
+Para la creación de la simulación en MatLab se 
+
 ## ROS
+
+Se realizó la instalación y configuración descrita en el repositorio [Robotics - UNAL - LAB3](https://github.com/fegonzalez7/rob_unal_clase3) de  y se realizaron los siguientes cambios en el archivo basic.yaml [catkin_ws/src/dynamixel_one_motor/config/basic.yaml]
+
+```
+waist:
+  ID: 1
+  Return_Delay_Time: 0
+
+shoulder:
+  ID: 2
+  Return_Delay_Time: 0
+  
+elbow:
+  ID: 3
+  Return_Delay_Time: 0
+
+wrist:
+  ID: 4
+  Return_Delay_Time: 0
+
+hand:
+  ID: 5
+  Return_Delay_Time: 0
+```
+
+Una vez realizados estos cambios se modificó y empleó el script "jointSrv.py" [catkin_ws/src/dynamixel_one_motor/scripts/jointSrv.py] para corroborar si todo funcionaba correctamente
+
+A partir de este script se creó el Script llamado "Script1.py" para cumplir con los requerimientos descritos en la guía de trabajo. En el cual se leía una entrada por parte del usuario de los 4 grados de cada servomotor (asumiendo siempre 0 para el quinto) y este script convertia los valores asignados en valores que los motores pudieran reconocer y los mandaba por medio de los comando de Dynamixel.
+
+Nota: Es necesario tener en cuenta que si se tiene el Dynamixel Wizard ejecutandoce se requiere que este esté desconectado de lo contrario ROS no podrá identificar los motores y generara error
 
 ## HMI
 
@@ -68,7 +108,7 @@ frame_botones.pack(side=tk.LEFT, padx=20, pady=20)
 def jointCommand(command, id_num, addr_name, value, time):
     #rospy.init_node('joint_node', anonymous=False)
     rospy.wait_for_service('dynamixel_workbench/dynamixel_command')
-    try:      
+    try:    
         dynamixel_command = rospy.ServiceProxy('/dynamixel_workbench/dynamixel_command', DynamixelCommand)
         result = dynamixel_command(command,id_num,addr_name,value)
         rospy.sleep(time)

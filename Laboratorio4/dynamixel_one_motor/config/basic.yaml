@@ -5,39 +5,19 @@
 waist:
   ID: 1
   Return_Delay_Time: 0
-  #CW_Angle_Limit: 1189
-  #CCW_Angle_Limit: 3257
-  #Moving_Speed: 23
-  #Operating_Mode: 3
 
 shoulder:
   ID: 2
   Return_Delay_Time: 0
-  #CW_Angle_Limit: 1527
-  #CCW_Angle_Limit: 2595
-  #Moving_Speed: 23
-  #Operating_Mode: 3
   
 elbow:
   ID: 3
   Return_Delay_Time: 0
-  #CW_Angle_Limit: 1000
-  #CCW_Angle_Limit: 3387
-  #Moving_Speed: 23
-  #Operating_Mode: 3
 
 wrist:
   ID: 4
   Return_Delay_Time: 0
-  #CW_Angle_Limit: 948
-  #CCW_Angle_Limit: 2862
-  #Moving_Speed: 23
-  #Operating_Mode: 3
 
 hand:
   ID: 5
   Return_Delay_Time: 0
-  #CW_Angle_Limit: 2000
-  #CCW_Angle_Limit: 2531
-  #Moving_Speed: 23
-  #Operating_Mode: 3
