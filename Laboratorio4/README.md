@@ -99,4 +99,24 @@ Vídeo del brazo alcanzando cada posición solicitada y demostración de uso de 
 
 [https://drive.google.com/file/d/1xkThAWf9IHRIQZQI4dn2cfCvEYGdaHWz/view?usp=sharing](https://drive.google.com/file/d/1xkThAWf9IHRIQZQI4dn2cfCvEYGdaHWz/view?usp=sharing)
 
-Gráfica digital de las poses comparándola con la fotografía del brazo real en la misma configuración.
+Gráficas digitales de las poses comparándola con la fotografía del brazo real en la misma configuración.
+
+#### Home
+
+![1716933810890](image/README/1716933810890.png)
+
+Pose 1
+
+![1716933847735](image/README/1716933847735.png)
+
+Pose 2
+
+![1716933856458](image/README/1716933856458.png)
+
+Pose 3
+
+![1716933863370](image/README/1716933863370.png)
+
+Pose 4
+
+![1716933870339](image/README/1716933870339.png)
